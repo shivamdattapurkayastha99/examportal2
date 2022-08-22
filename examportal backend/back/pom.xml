@@ -9,7 +9,7 @@
 		<version>2.5.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.saini_vinit.portal.exam</groupId>
+	<groupId>com.shivam.portal.exam</groupId>
 	<artifactId>exam-portal</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>exam-portal</name>

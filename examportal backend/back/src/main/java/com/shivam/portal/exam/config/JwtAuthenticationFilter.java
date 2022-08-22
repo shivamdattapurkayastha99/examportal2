@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,8 +40,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 		final String requestTokenHeader = request.getHeader("Authorization");
 		
 		
-		System.out.println(requestTokenHeader);
-		
+//		System.out.println(requestTokenHeader);
+
 		String username=null;
 		String jwtToken=null;
 		
@@ -54,30 +55,33 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 				username = this.jwtUtil.extractUsername(jwtToken);
 				
 			} catch (ExpiredJwtException e) {
-				// TODO: handle exception
-			System.out.println("jwt token has expired");
+
+//			System.out.println("jwt token has expired");
+
 			e.printStackTrace();
-			}catch (Exception e) {
-				// TODO: handle exception
-				e.printStackTrace();
 			}
+//			catch (Exception e) {
+//
+//				e.printStackTrace();
+//			}
 			
 		}else {
-			System.out.println("invalid token not start with bearer string");
+
+//			System.out.println("invalid token not start with bearer string");
 		}
 		
 		
 		
 		
-		///valided
+
 		
 		if(username!=null && SecurityContextHolder.getContext().getAuthentication()==null) {
 			
 			
 			final UserDetails loadUserByUsername = this.userDetailsServiceImpl.loadUserByUsername(username);
 			
-			if(this.jwtUtil.validateToken(jwtToken, loadUserByUsername)) {
-				//token is valid
+			if(Boolean.TRUE.equals(this.jwtUtil.validateToken(jwtToken, loadUserByUsername))) {
+
 				
 				UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken=
 						new UsernamePasswordAuthenticationToken(loadUserByUsername,null,loadUserByUsername.getAuthorities());
@@ -88,7 +92,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter{
 			}
 			
 		}else {
-			System.out.println("Token is not valid");
+//			System.out.println("Token is not valid");
+
 		}
 		
 		
