@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
     this.isUserLoggedIn = this.loginService.isUserLoggedIn();
     this.user = this.loginService.getUserDetailsFromLocalStorage();
 
-    this.loginService.loginStatusSubject.asObservable().subscribe(data => {
+    this.loginService.loginStatusSubject.asObservable().subscribe(_data => {
       this.isUserLoggedIn = this.loginService.isUserLoggedIn();
       this.user = this.loginService.getUserDetailsFromLocalStorage();
 
@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
     this.isUserLoggedIn = false;
     this.user = null;
 
-     this.loginService.loginStatusSubject.asObservable().subscribe(data => {
+     this.loginService.loginStatusSubject.asObservable().subscribe(_data => {
       this.isUserLoggedIn = this.loginService.isUserLoggedIn();
       this.user = this.loginService.getUserDetailsFromLocalStorage();
 

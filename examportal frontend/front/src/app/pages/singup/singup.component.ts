@@ -35,12 +35,12 @@ export class SingupComponent implements OnInit {
     }
 
 
-    //user servuce
+    
 
     this.userService.addUser(this.user).subscribe(
       (data:any)=>{
         console.log(data)
-        //this._snackBar.open("Registration successfull..","ok");
+        
 
         Swal.fire('Successfully done !! ','User name is '+data.username,'success');
       },
@@ -48,7 +48,7 @@ export class SingupComponent implements OnInit {
 
         console.log(error)
         Swal.fire('Opps something went wrong !! ','Registration Failed','error');
-       // this._snackBar.open("Registration Faild.","ok");
+       
       }
     )
 

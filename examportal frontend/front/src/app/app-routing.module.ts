@@ -40,8 +40,7 @@ const routes: Routes = [
     path:'admin',
     component:DashboardComponent,
     canActivate:[AdminGuard]
-    //four load component inside component
-    //inside admin component loading profile and other compnent
+    
 
     ,children:[
       {

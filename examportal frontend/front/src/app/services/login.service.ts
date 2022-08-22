@@ -18,14 +18,12 @@ public getCurrentUser() {
 }
 
 
-//genrate token
+
   public genrateToken(loginData:any) {
     return this.http.post(`${baseUrl}/genrate-token`,loginData)
   }
 
-  /**
-   * loginUser store token localStorage
-   */
+  
   public loginUser(token:any) {
     localStorage.setItem("token",token);
     
@@ -33,9 +31,7 @@ public getCurrentUser() {
   }
 
 
-  /**
-   * isUserLoggedIn ornot
-   */
+  
   public isUserLoggedIn() {
     let tokenStr=localStorage.getItem("token");
 
@@ -47,9 +43,7 @@ public getCurrentUser() {
   }
 
 
-/**
- * removeTokenFromStorage
- */
+
 public removeTokenFromStorage() {
   localStorage.removeItem("token");
   localStorage.removeItem("user");
@@ -57,24 +51,18 @@ public removeTokenFromStorage() {
   return true;
 }
 
-/**
- * getTokenFromLocalStorage
- */
+
 public getTokenFromLocalStorage() {
   return localStorage.getItem("token");
 }
 
 
-/**
- * setUserDetailsLocalStorage
-User */
+
 public setUserDetailsLocalStorage(user:any) {
   localStorage.setItem("user",JSON.stringify(user));
 }
 
-/**
- * getUserDetailsFromLocalStorage
- */
+
 public getUserDetailsFromLocalStorage() {
   let userStr=localStorage.getItem("user");
 
@@ -87,9 +75,7 @@ public getUserDetailsFromLocalStorage() {
 }
 
 
-/**
- * getUserRole
- */
+
 public getUserRole() {
   let user=this.getUserDetailsFromLocalStorage();
 

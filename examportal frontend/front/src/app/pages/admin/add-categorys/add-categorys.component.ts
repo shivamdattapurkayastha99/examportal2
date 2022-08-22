@@ -20,9 +20,7 @@ export class AddCategorysComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /**
-   * formSubmit
-   */
+  
   public formSubmit() {
 
     if (this.category.title.trim() == '' || this.category.title == null) {
@@ -32,13 +30,13 @@ export class AddCategorysComponent implements OnInit {
       this._snack.open("description required", 'ok');
     } else {
 
-      this._category.addNewCategory(this.category).subscribe((data: any) => {
+      this._category.addNewCategory(this.category).subscribe((_data: any) => {
         this.category.title = '';
         this.category.description = '';
 
         Swal.fire('Success || ', 'Category added successfully.', 'success');
       },
-        (error) => {
+        (_error) => {
           Swal.fire('Faild || ', 'Category added faild.', 'error');
         }
       )

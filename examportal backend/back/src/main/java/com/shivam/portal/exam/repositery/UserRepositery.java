@@ -9,7 +9,7 @@ import com.shivam.portal.exam.entity.User;
 
 @Repository
 public interface UserRepositery extends JpaRepository<User, Long>{
-											//genratic type < >
+
 	Optional<User> findByUsername(String username);
                                                     
 	

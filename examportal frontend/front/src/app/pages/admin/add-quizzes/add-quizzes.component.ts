@@ -47,11 +47,9 @@ export class AddQuizzesComponent implements OnInit {
   }
 
 
-  /**
-   * formSubmit
-   */
+  
   public formSubmit() {
-    this._quiz.addNewQuiz(this.quizData).subscribe((data:any)=>{
+    this._quiz.addNewQuiz(this.quizData).subscribe((_data:any)=>{
       this._router.navigate(['/admin/quizzes']);
 
       Swal.fire("Success","Quizz added successfully","success");

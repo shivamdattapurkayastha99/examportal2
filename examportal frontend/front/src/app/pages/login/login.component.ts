@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         console.log(data);
 
 
-        //login
+        
 
         this.loginService.loginUser(data.token);
 
@@ -54,18 +54,16 @@ export class LoginComponent implements OnInit {
             this.loginService.setUserDetailsLocalStorage(user);
             console.log(user);
 
-            //rediret  to admin or normal dashboard
+            
 
             if (this.loginService.getUserRole() == "ADMIN") {
 
-              //admin dash
-              //window.location.href = "/admin";
+              
               this.router.navigate(['admin']);
               this.loginService.loginStatusSubject.next(true);
             } else if (this.loginService.getUserRole() == "NORMAL") {
 
-              //usr dash
-            //  window.location.href = "/user-dashboard";
+              
             this.router.navigate(['user-dashboard/0']);
             this.loginService.loginStatusSubject.next(true);
 

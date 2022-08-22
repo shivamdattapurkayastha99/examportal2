@@ -19,7 +19,7 @@ export class LoadQuizComponent implements OnInit {
   ngOnInit(): void {
     
    
-      //this subscription for every time will  run  onit when link will change
+      
     this.rout.params.subscribe((params)=>{
       this.catId=params.catId;
 
@@ -27,15 +27,15 @@ export class LoadQuizComponent implements OnInit {
 
 
       if(this.catId==0){
-        //load all quiz
+        
         this._quiz.getActiveQuizzes().subscribe((data)=>{
           this.quizzess=data;
 
           
           
         },
-        (error:any)=>{
-            //error 
+        (_error:any)=>{
+            
             alert("error in loading all quizzess")
         })
 
@@ -50,8 +50,8 @@ export class LoadQuizComponent implements OnInit {
         
         
       },
-      (error:any)=>{
-          //error 
+      (_error:any)=>{
+          
           alert("error in loading all quizzess")
       })
 

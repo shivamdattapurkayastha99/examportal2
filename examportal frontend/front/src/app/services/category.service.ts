@@ -9,15 +9,11 @@ export class CategoryService {
 
   constructor(private _http:HttpClient) { }
 
-  /**
-   * categories from server
-   */
+  
   public categories() {
     return this._http.get(`${baseUrl}/category/`);
   }
-  /**
-   * addNewCategory
-   */
+  
   public addNewCategory(category:any) {
     return this._http.post(`${baseUrl}/category/`,category);
   }

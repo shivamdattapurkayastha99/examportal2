@@ -49,9 +49,7 @@ export class StartQuizComponent implements OnInit {
 
   }
 
-  /**
-   * loadQuiz
-   */
+  
   public loadQuiz() {
     this._questions.getQuestionsByQuizforUser(this.qid).subscribe((data) => {
 
@@ -59,7 +57,7 @@ export class StartQuizComponent implements OnInit {
 
       this.question = data;
 
-      //time calculate
+      
       this.timer = this.question.length * 2 * 60;
 
       this.countdown();

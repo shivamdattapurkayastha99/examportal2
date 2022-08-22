@@ -48,8 +48,8 @@ qid='0';
         console.log(this.quizData);
       }
     ),
-    (error:any)=>{
-      //quiz not ound
+    (_error:any)=>{
+      
 
       console.log("quiz not found");
     }

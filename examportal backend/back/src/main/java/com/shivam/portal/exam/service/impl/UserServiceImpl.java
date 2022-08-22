@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.shivam.portal.exam.dto.ResultUserDto;
 import com.shivam.portal.exam.entity.User;
-import com.shivam.portal.exam.entity.UserRole;
+
 import com.shivam.portal.exam.repositery.RoleRepositery;
 import com.shivam.portal.exam.repositery.UserRepositery;
 import com.shivam.portal.exam.service.UserService;

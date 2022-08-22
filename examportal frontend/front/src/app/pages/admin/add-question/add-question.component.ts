@@ -43,13 +43,13 @@ export class AddQuestionComponent implements OnInit {
 
 
   addQuestion(){
-    this._question.addQuestion(this.question).subscribe((data:any)=>{
+    this._question.addQuestion(this.question).subscribe((_data:any)=>{
       Swal.fire("Success","Question addedd to "+this.qtitle+" successfully",'success').then((e)=>{
         this._rout.navigate(['/admin/question/'+this.qid+'/'+this.qtitle]);
       
       })
     }),
-    (error:any)=>{
+    (_error:any)=>{
       Swal.fire("Faild","Question proccess faild",'error');
         
     }

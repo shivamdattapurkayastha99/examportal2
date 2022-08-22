@@ -26,7 +26,7 @@ export class PrestartQuizComponent implements OnInit {
 console.log(data)
 
    }),
-   (error)=>{ 
+   (_error)=>{ 
      console.log("faild to load quiz")
    }
    )
@@ -34,9 +34,7 @@ console.log(data)
 
    
   }
-/**
- * startQuiz
- */
+
 public startQuiz() {
 
   Swal.fire({
