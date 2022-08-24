@@ -1,11 +1,13 @@
 package com.shivam.portal.exam;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.shivam.portal.exam.service.UserService;
+
 
 
 
@@ -19,10 +21,5 @@ public class ExamPortalApplication{
 		SpringApplication.run(ExamPortalApplication.class, args);
 
 	}
-
-
-
-
-
 
 }
