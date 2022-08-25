@@ -34,16 +34,27 @@ public class UserController {
 		List<UserRole> roles=new ArrayList<>();
 		
 		Role role=new Role();
-		
+
 		role.setRoleName("NORMAL");
-		
+
 		UserRole userRole=new UserRole();
 		userRole.setRole(role);
 		userRole.setUser(user);
-		
+
 		roles.add(userRole);
-		
+
 		ResultUserDto createUser = this.userService.createUser(user, roles);
+//		Role role=new Role();
+//
+//		role.setRoleName("ADMIN");
+//
+//		UserRole userRole=new UserRole();
+//		userRole.setRole(role);
+//		userRole.setUser(user);
+//
+//		roles.add(userRole);
+//
+//		ResultUserDto createUser = this.userService.createUser(user, roles);
 		
 		
 		return createUser.isSuccess()?
