@@ -58,7 +58,7 @@ public class QuestionController {
 	@GetMapping("/quiz/{qid}")
 	public ResponseEntity<?> getQuestionsOfQuiz(@PathVariable("qid") Long id) {
 		
-		System.out.println("id is:"+id);
+//		System.out.println("id is:"+id);
 		
 //		Quiz quiz = new Quiz();
 //		quiz.setQId(id);
@@ -120,7 +120,7 @@ public class QuestionController {
 	public ResponseEntity<?> calculateTest(@RequestBody List<Question> 
 													questions){
 		
-		System.out.println(questions);
+//		System.out.println(questions);
 		
 		double marksGot=0;
 		int correctAnswer=0;

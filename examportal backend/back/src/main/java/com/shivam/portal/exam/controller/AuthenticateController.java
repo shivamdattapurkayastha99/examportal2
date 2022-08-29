@@ -78,9 +78,9 @@ public class AuthenticateController {
 				.authenticate(new UsernamePasswordAuthenticationToken(username, password));
 
 		} catch (DisabledException e) {
-			throw new Exception("USER DISABLED");
+			throw new DisabledException("USER DISABLED");
 		} catch (BadCredentialsException e) {
-			throw new Exception("Invalid Credentials" + e.getMessage());
+			throw new BadCredentialsException("Invalid Credentials" + e.getMessage());
 		}
 
 	}
